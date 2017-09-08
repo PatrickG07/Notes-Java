@@ -15,7 +15,7 @@ import java.util.List;
  *
  *
  */
-public class Controllerrestore {
+public class Controllerrestore{
 
 	@FXML
 	protected static Button delete;
@@ -25,7 +25,15 @@ public class Controllerrestore {
 
 	@FXML
 	public ListView<String> lvAnzeige;
+	
+	public void main() {
+		System.out.println("hallo");
+		start();
+	}
 
+	/**
+	 * Clears the ListView and insets it with the text from the database
+	 */
 	public void start() {
 		DB.Liste01.clear();
 		lvAnzeige.getItems().clear();
@@ -42,6 +50,12 @@ public class Controllerrestore {
 		}
 	}
 
+	/**
+	 * gets the text from the selected item in the ListView and deletes it in the database
+	 * 
+	 * @param event
+	 * @throws SQLException
+	 */
 	@FXML
 	protected void delete(ActionEvent event) throws SQLException {
 		Database.data = lvAnzeige.getSelectionModel().getSelectedItem();
@@ -50,6 +64,12 @@ public class Controllerrestore {
 		start();
 	}
 
+	/**
+	 * changes the scene to the Start and gets the ID and the text form the selected data from The ListView
+	 * 
+	 * @param e
+	 * @throws SQLException
+	 */
 	@FXML
 	protected void back(ActionEvent e) throws SQLException {
 		Database.data = lvAnzeige.getSelectionModel().getSelectedItem();
@@ -61,6 +81,11 @@ public class Controllerrestore {
 		// CS.Start();
 	}
 	
+	/**
+	 * Batten to run the start Method
+	 * 
+	 * @param e
+	 */
 	@FXML
 	protected void refresch(ActionEvent e) {
 		start();

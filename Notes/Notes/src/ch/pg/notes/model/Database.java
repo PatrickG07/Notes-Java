@@ -13,13 +13,16 @@ public class Database {
 
 	public static String data = "";
 	public static int ID;
-
+	
 	public List<String> Liste01 = new ArrayList<String>();
-
+	
 	static String brek = System.getProperty("line.separator");
-
+	
 	static Connection con;
-
+	
+	/**
+	 * The database connection
+	 */
 	private void database() {
 		try {
 			Class.forName("org.sqlite.JDBC").newInstance();
@@ -37,6 +40,11 @@ public class Database {
 		}
 	}
 
+	/**
+	 * Inserts the data (Text from TextArea) to the Database
+	 * 
+	 * @throws SQLException
+	 */
 	public void databaseinsert() throws SQLException {
 		database();
 		PreparedStatement stmt = con.prepareStatement("INSERT INTO notesT(text) VALUES(?)");
@@ -49,6 +57,11 @@ public class Database {
 		}
 	}
 
+	/**
+	 * updates the data in the database with the ID
+	 * 
+	 * @throws SQLException
+	 */
 	public void databaseupdate() throws SQLException {
 			PreparedStatement stmt = con.prepareStatement("UPDATE notesT SET text = ? WHERE ID = ?");
 			try {
@@ -62,6 +75,11 @@ public class Database {
 			}
 	}
 
+	/**
+	 * selects the text from the entire database and saves it in to an array
+	 * 
+	 * @throws SQLException
+	 */
 	public void databaseselect() throws SQLException {
 		database();
 
@@ -80,6 +98,11 @@ public class Database {
 		}
 	}
 
+	/**
+	 * Selects the text from the ID to get the selected text in the ListView
+	 * 
+	 * @throws SQLException
+	 */
 	public void databaseselectID() throws SQLException {
 		database();
 		String select = "SELECT ID FROM notesT WHERE TEXT = '" + data + "'";
@@ -93,6 +116,11 @@ public class Database {
 		}
 	}
 
+	/**
+	 * delete the selected data from ListView
+	 * 
+	 * @throws SQLException
+	 */
 	public void databasedelete() throws SQLException {
 		database();
 		String select = "DELETE FROM notesT WHERE text = '" + data + "'";
