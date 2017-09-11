@@ -8,15 +8,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.pg.notes.controller.Controllerstart">
   <children>
-    <Button layoutX="203.0" layoutY="336.0" mnemonicParsing="false" onAction="#New" prefHeight="36.0" prefWidth="77.0" text="New" />
-    <Button layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#Restore" prefHeight="36.0" prefWidth="98.0" text="Restore" />
-    <Button layoutX="290.0" layoutY="336.0" mnemonicParsing="false" onAction="#Save" prefHeight="36.0" prefWidth="98.0" text="Save" />
+    <Button layoutX="152.0" layoutY="336.0" mnemonicParsing="false" onAction="#newpage" prefHeight="35.0" prefWidth="100.0" text="New" />
+    <Button layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#restore" prefHeight="35.0" prefWidth="100.0" text="Restore" />
+    <Button layoutX="290.0" layoutY="336.0" mnemonicParsing="false" onAction="#save" prefHeight="35.0" prefWidth="100.0" text="Save" />
     <Label layoutX="136.0" layoutY="14.0" text="Notes">
       <font>
         <Font size="50.0" />
       </font>
     </Label>
       <TextArea fx:id="TA" layoutX="17.0" layoutY="79.0" prefHeight="245.0" prefWidth="371.0" />
-      <Button layoutX="126.0" layoutY="336.0" mnemonicParsing="false" onAction="#refresch" prefHeight="36.0" prefWidth="66.0" text="refresch" />
   </children>
 </AnchorPane>
